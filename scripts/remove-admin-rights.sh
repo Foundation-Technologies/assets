@@ -1,6 +1,20 @@
 #!/bin/bash
 
+# convenience function to run a command as the current user
+# usage:
+#   runAsUser command arguments...
+runAsUser() {  
+  if [ "$currentUser" != "loginwindow" ]; then
+    launchctl asuser "$uid" sudo -u "$currentUser" "$@"
+  else
+    echo "no user logged in"
+    # uncomment the exit command
+    # to make the function exit with an error when no user is logged in
+    # exit 1
+  fi
+}
+
 loggedInUser=$( ls -l /dev/console | awk '{print $3}' )
-sudo -u $loggedInUser /Applications/Privileges.app/Contents/MacOS/PrivilegesCLI --remove
+runAsUser /Applications/Privileges.app/Contents/MacOS/PrivilegesCLI --remove
 
 exit 0
