@@ -37,6 +37,10 @@ runAsUser $dockutil --remove "Maps" --no-restart
 runAsUser $dockutil --remove "Contacts" --no-restart 
 runAsUser $dockutil --remove "Freeform" --no-restart
 runAsUser $dockutil --remove "Reminders" --no-restart
+runAsUser $dockutil --remove "Photos" --no-restart
+runAsUser $dockutil --remove "Mail" --no-restart
+runAsUser $dockutil --remove "Calendar" --no-restart
+runAsUser $dockutil --remove "Notes" --no-restart
 
 runAsUser $dockutil --move "System Settings" --position end
 
