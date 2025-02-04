@@ -3,6 +3,9 @@
 # convenience function to run a command as the current user
 # usage:
 #   runAsUser command arguments...
+currentUser=$(scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ { print $3 }')
+uid=$(id -u "$currentUser")
+
 runAsUser() {  
   if [ "$currentUser" != "loginwindow" ]; then
     launchctl asuser "$uid" sudo -u "$currentUser" "$@"
