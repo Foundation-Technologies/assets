@@ -19,6 +19,7 @@ runAsUser() {
 }
 
 # Configure the dock for a new user
+runAsUser $dockutil --add "/Applications/Privileges.app" --position 1 --no-restart 
 runAsUser $dockutil --add "/Applications/Microsoft Outlook.app" --no-restart 
 runAsUser $dockutil --add "/Applications/Slack.app" --no-restart 
 runAsUser $dockutil --add "/Applications/zoom.us.app" --no-restart 
