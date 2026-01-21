@@ -42,6 +42,9 @@ runAsUser $dockutil --remove "Photos" --no-restart
 runAsUser $dockutil --remove "Mail" --no-restart
 runAsUser $dockutil --remove "Calendar" --no-restart
 runAsUser $dockutil --remove "Notes" --no-restart
+runAsUser $dockutil --remove "Phone" --no-restart
+runAsUser $dockutil --remove "Games" --no-restart
+runAsUser $dockutil --remove "iPhone Mirroring" --no-restart
 
 runAsUser $dockutil --move "System Settings" --position end
 
