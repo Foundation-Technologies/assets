@@ -26,6 +26,7 @@ runAsUser $dockutil --add "/Applications/Microsoft Word.app" --no-restart
 runAsUser $dockutil --add "/Applications/Microsoft Excel.app" --no-restart 
 runAsUser $dockutil --add "/Applications/Microsoft PowerPoint.app" --no-restart
 runAsUser $dockutil --add "/Applications/Microsoft OneNote.app" --no-restart 
+runAsUser $dockutil --add "/Applications/Self-Service.app" --position start --no-restart 
 
 runAsUser $dockutil --remove "TV" --no-restart
 runAsUser $dockutil --remove "App Store" --no-restart
